@@ -26,6 +26,7 @@ Each project in this folder represents hours of experimentation, debugging, and 
 |---------|-------------|--------|
 | [Wazuh-MCP-Integration](./Wazuh-MCP-Integration/) | Connect your Wazuh SIEM to Claude AI using the Model Context Protocol | ✅ Complete |
 | [Burp-Suite-MCP-Integration](./Burp-Suite-MCP-Integration/) | AI-powered penetration testing with Burp Suite Community Edition | ✅ Complete |
+| [OBS-MCP-Integration](./OBS-MCP-Integration/) | Control OBS Studio with Claude AI for streaming, recording, and content creation | ✅ Complete |
 
 ### Coming Soon
 
@@ -68,9 +69,11 @@ Have questions? Found a bug? Want to share your own projects? **Open an issue or
 Special thanks to:
 - The **Wazuh** team for building an incredible open-source SIEM
 - **PortSwigger** for Burp Suite and their commitment to web security education
+- **Roy Shilkrot** for the [obs-mcp](https://github.com/royshil/obs-mcp) server
 - **Anthropic** for Claude and the Model Context Protocol
+- The **OBS Project** for amazing open-source streaming software
 - The **cybersecurity community** for always being willing to help and share
-- **You** for taking the time to check out this project
+- **You** for taking the time to check out these projects
 
 ---
 
