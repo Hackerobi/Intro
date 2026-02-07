@@ -18,13 +18,14 @@ Whether you're a seasoned security professional curious about AI integration, or
 
 ## What You'll Find Here
 
-This is our **first project of many**. Each project in this folder represents hours of experimentation, debugging, and learning. I've tried to document not just *what* works, but *why* it works and *how* I got there — including all the mistakes along the way.
+Each project in this folder represents hours of experimentation, debugging, and learning. I've tried to document not just *what* works, but *why* it works and *how* I got there — including all the mistakes along the way.
 
 ### Current Projects
 
 | Project | Description | Status |
 |---------|-------------|--------|
 | [Wazuh-MCP-Integration](./Wazuh-MCP-Integration/) | Connect your Wazuh SIEM to Claude AI using the Model Context Protocol | ✅ Complete |
+| [Burp-Suite-MCP-Integration](./Burp-Suite-MCP-Integration/) | AI-powered penetration testing with Burp Suite Community Edition | ✅ Complete |
 
 ### Coming Soon
 
@@ -46,7 +47,7 @@ This is our **first project of many**. Each project in this folder represents ho
 
 ## A Note on AI in Security
 
-AI tools like Claude aren't replacing security professionals — they're amplifying us. The ability to query your SIEM using natural language, generate reports in seconds, and analyze threats conversationally is a game-changer. But it's still **you** making the decisions, **you** understanding the context, and **you** protecting your organization.
+AI tools like Claude aren't replacing security professionals — they're amplifying us. The ability to query your SIEM using natural language, control penetration testing workflows conversationally, and generate reports in seconds is a game-changer. But it's still **you** making the decisions, **you** understanding the context, and **you** protecting your organization.
 
 These tools are force multipliers. Use them wisely.
 
@@ -66,6 +67,7 @@ Have questions? Found a bug? Want to share your own projects? **Open an issue or
 
 Special thanks to:
 - The **Wazuh** team for building an incredible open-source SIEM
+- **PortSwigger** for Burp Suite and their commitment to web security education
 - **Anthropic** for Claude and the Model Context Protocol
 - The **cybersecurity community** for always being willing to help and share
 - **You** for taking the time to check out this project
