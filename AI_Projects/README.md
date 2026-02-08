@@ -28,6 +28,7 @@ Each project in this folder represents hours of experimentation, debugging, and 
 | [Burp-Suite-MCP-Integration](./Burp-Suite-MCP-Integration/) | AI-powered penetration testing with Burp Suite Community Edition | ✅ Complete |
 | [OBS-MCP-Integration](./OBS-MCP-Integration/) | Control OBS Studio with Claude AI for streaming, recording, and content creation | ✅ Complete |
 | [Discord-MCP-Integration](./Discord-MCP-Integration/) | AI-powered Discord server management — build and maintain communities through conversation | ✅ Complete |
+| [YouTube-MCP-Integration](./YouTube-MCP-Integration/) | YouTube channel management, analytics, and content discovery powered by Claude AI | ✅ Complete |
 
 ### Coming Soon
 
@@ -49,7 +50,7 @@ Each project in this folder represents hours of experimentation, debugging, and 
 
 ## A Note on AI in Security
 
-AI tools like Claude aren't replacing security professionals — they're amplifying us. The ability to query your SIEM using natural language, control penetration testing workflows conversationally, manage your streaming setup, and build Discord communities through conversation is a game-changer. But it's still **you** making the decisions, **you** understanding the context, and **you** protecting your organization.
+AI tools like Claude aren't replacing security professionals — they're amplifying us. The ability to query your SIEM using natural language, control penetration testing workflows conversationally, manage your streaming setup, build Discord communities, and now manage your YouTube channel through conversation is a game-changer. But it's still **you** making the decisions, **you** understanding the context, and **you** protecting your organization.
 
 These tools are force multipliers. Use them wisely.
 
@@ -72,6 +73,7 @@ Special thanks to:
 - **PortSwigger** for Burp Suite and their commitment to web security education
 - **Roy Shilkrot** for the [obs-mcp](https://github.com/royshil/obs-mcp) server
 - **SaseQ** for the [discord-mcp](https://github.com/SaseQ/discord-mcp) server
+- **Google** for the YouTube Data API v3
 - **Anthropic** for Claude and the Model Context Protocol
 - The **OBS Project** for amazing open-source streaming software
 - The **cybersecurity community** for always being willing to help and share
