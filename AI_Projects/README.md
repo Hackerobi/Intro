@@ -30,12 +30,12 @@ Each project in this folder represents hours of experimentation, debugging, and 
 | [Discord-MCP-Integration](./Discord-MCP-Integration/) | AI-powered Discord server management — build and maintain communities through conversation | ✅ Complete |
 | [YouTube-MCP-Integration](./YouTube-MCP-Integration/) | YouTube channel management, analytics, and content discovery powered by Claude AI | ✅ Complete |
 | [LitterBox-MCP-Integration](./LitterBox-MCP-Integration/) | Private malware analysis sandbox with AI-powered OPSEC recommendations | ✅ Complete |
+| [SysReptor-MCP-Integration](./SysReptor-MCP-Integration/) | AI-powered pentest reporting — import scanner results, manage findings, and generate reports through conversation | ✅ Complete |
 
 ### Coming Soon
 
 - 🔍 **Shodan + Claude Integration** - Reconnaissance powered by AI
 - 🛡️ **Automated Threat Intelligence Workflows** - Combining multiple tools
-- 📊 **Security Report Generation** - Natural language security reporting
 - 🎯 **CTF Assistance Tools** - AI-powered CTF helpers
 
 ---
@@ -51,7 +51,7 @@ Each project in this folder represents hours of experimentation, debugging, and 
 
 ## A Note on AI in Security
 
-AI tools like Claude aren't replacing security professionals — they're amplifying us. The ability to query your SIEM using natural language, control penetration testing workflows conversationally, manage your streaming setup, build Discord communities, manage your YouTube channel, and now run private malware analysis with AI-powered OPSEC recommendations through conversation is a game-changer. But it's still **you** making the decisions, **you** understanding the context, and **you** protecting your organization.
+AI tools like Claude aren't replacing security professionals — they're amplifying us. The ability to query your SIEM using natural language, control penetration testing workflows conversationally, manage your streaming setup, build Discord communities, manage your YouTube channel, run private malware analysis with AI-powered OPSEC recommendations, and now automate your entire pentest reporting pipeline through conversation is a game-changer. But it's still **you** making the decisions, **you** understanding the context, and **you** protecting your organization.
 
 These tools are force multipliers. Use them wisely.
 
@@ -76,6 +76,8 @@ Special thanks to:
 - **SaseQ** for the [discord-mcp](https://github.com/SaseQ/discord-mcp) server
 - **Google** for the YouTube Data API v3
 - **BlackSnufkin** for [LitterBox](https://github.com/BlackSnufkin/LitterBox) — a game-changer for red team OPSEC
+- **Syslifters** for [SysReptor](https://github.com/Syslifters/sysreptor) — professional pentest reporting made easy
+- **slvnlrt** for [reptor-mcp](https://github.com/slvnlrt/reptor-mcp) — bridging SysReptor to the MCP ecosystem
 - **Anthropic** for Claude and the Model Context Protocol
 - The **OBS Project** for amazing open-source streaming software
 - The **cybersecurity community** for always being willing to help and share
