@@ -33,6 +33,7 @@ Each project in this folder represents hours of experimentation, debugging, and 
 | [SysReptor-MCP-Integration](./SysReptor-MCP-Integration/) | AI-powered pentest reporting — import scanner results, manage findings, and generate reports through conversation | ✅ Complete |
 | [CyberRAG-StudyCompanion-MCP-Integration](./CyberRAG-StudyCompanion-MCP-Integration/) | Dual MCP servers — aggregate 3,000+ cybersecurity knowledge items with semantic search, plus personal study tracking with auto-tagging, flashcards, and gap analysis | ✅ Complete |
 | [LinkedIn-MCP-Integration](./LinkedIn-MCP-Integration/) | Manage your LinkedIn presence through conversation — profile access and post creation with OpenID Connect auth | ✅ Complete |
+| [Splunk-Docker-HomeLab](./Splunk-Docker-HomeLab/) | Deploy Splunk Enterprise in Docker with full network isolation, persistent storage, and zero conflicts with existing containers | ✅ Complete |
 
 ### Coming Soon
 
@@ -53,7 +54,7 @@ Each project in this folder represents hours of experimentation, debugging, and 
 
 ## A Note on AI in Security
 
-AI tools like Claude aren't replacing security professionals — they're amplifying us. The ability to query your SIEM using natural language, control penetration testing workflows conversationally, manage your streaming setup, build Discord communities, manage your YouTube channel, run private malware analysis with AI-powered OPSEC recommendations, automate your entire pentest reporting pipeline, build a personal cybersecurity knowledge engine with 3,000+ searchable items and study tracking, and now manage your professional LinkedIn presence through conversation is a game-changer. But it's still **you** making the decisions, **you** understanding the context, and **you** protecting your organization.
+AI tools like Claude aren't replacing security professionals — they're amplifying us. The ability to query your SIEM using natural language, control penetration testing workflows conversationally, manage your streaming setup, build Discord communities, manage your YouTube channel, run private malware analysis with AI-powered OPSEC recommendations, automate your entire pentest reporting pipeline, build a personal cybersecurity knowledge engine with 3,000+ searchable items and study tracking, manage your professional LinkedIn presence through conversation, and now deploy and manage Splunk Enterprise for centralized log analysis is a game-changer. But it's still **you** making the decisions, **you** understanding the context, and **you** protecting your organization.
 
 These tools are force multipliers. Use them wisely.
 
@@ -81,6 +82,7 @@ Special thanks to:
 - **Syslifters** for [SysReptor](https://github.com/Syslifters/sysreptor) — professional pentest reporting made easy
 - **slvnlrt** for [reptor-mcp](https://github.com/slvnlrt/reptor-mcp) — bridging SysReptor to the MCP ecosystem
 - **Syndicai** for the [linkedin-mcp-server](https://github.com/syndicai/linkedin-mcp-server) base project
+- **Splunk** for building the industry-standard platform for operational intelligence
 - **MITRE Corporation**, **GTFOBins/WADComs** contributors, **OWASP**, **Carlos Polop** (HackTricks), **swisskyrepo** (PayloadsAllTheThings), and the **HackerOne/Bugcrowd** communities for the cybersecurity knowledge that powers CyberRAG
 - **Anthropic** for Claude and the Model Context Protocol
 - The **OBS Project** for amazing open-source streaming software
