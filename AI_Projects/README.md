@@ -38,6 +38,7 @@ Each project in this folder represents hours of experimentation, debugging, and 
 | [Splunk-MCP-Integration](./Splunk-MCP-Integration/) | Connect Splunk Enterprise to Claude AI — search indexes, inspect sourcetypes, manage KV stores, and query your SIEM through natural conversation | ✅ Complete |
 | [KVM-MCP-Integration](./KVM-MCP-Integration/) | AI-powered virtual machine management — create, clone, snapshot, and orchestrate entire pentest lab environments through conversation with 21 tools | ✅ Complete |
 | [OpenWebUI-MCP-Bridge](./OpenWebUI-MCP-Bridge/) | Unified MCP-to-OpenAPI bridge — expose all your MCP tool servers to OpenWebUI through a single endpoint using FastMCP proxy and mcpo | ✅ Complete |
+| [HexStrike-MCP-Integration](./HexStrike-MCP-Integration/) | AI-powered offensive security platform — 150+ penetration testing tools with 12+ autonomous AI agents via Docker two-container architecture on isolated networking | ✅ Complete |
 
 ### Coming Soon
 
@@ -58,7 +59,7 @@ Each project in this folder represents hours of experimentation, debugging, and 
 
 ## A Note on AI in Security
 
-AI tools like Claude aren't replacing security professionals — they're amplifying us. The ability to query your SIEM using natural language, analyze Active Directory attack paths conversationally through BloodHound, control penetration testing workflows conversationally, manage your streaming setup, build Discord communities, manage your YouTube channel, run private malware analysis with AI-powered OPSEC recommendations, automate your entire pentest reporting pipeline, build a personal cybersecurity knowledge engine with 3,000+ searchable items and study tracking, manage your professional LinkedIn presence through conversation, deploy and manage Splunk Enterprise for centralized log analysis, search and query your Splunk SIEM directly through Claude, orchestrate entire virtual machine lab environments with 21 AI-powered tools, and bridge all your MCP tools into OpenWebUI through a single unified endpoint is a game-changer. But it's still **you** making the decisions, **you** understanding the context, and **you** protecting your organization.
+AI tools like Claude aren't replacing security professionals — they're amplifying us. The ability to query your SIEM using natural language, analyze Active Directory attack paths conversationally through BloodHound, control penetration testing workflows conversationally, manage your streaming setup, build Discord communities, manage your YouTube channel, run private malware analysis with AI-powered OPSEC recommendations, automate your entire pentest reporting pipeline, build a personal cybersecurity knowledge engine with 3,000+ searchable items and study tracking, manage your professional LinkedIn presence through conversation, deploy and manage Splunk Enterprise for centralized log analysis, search and query your Splunk SIEM directly through Claude, orchestrate entire virtual machine lab environments with 21 AI-powered tools, bridge all your MCP tools into OpenWebUI through a single unified endpoint, and run 150+ offensive security tools through an AI-powered automation platform is a game-changer. But it's still **you** making the decisions, **you** understanding the context, and **you** protecting your organization.
 
 These tools are force multipliers. Use them wisely.
 
@@ -95,6 +96,8 @@ Special thanks to:
 - **steveydevey** for the [kvm-mcp](https://github.com/steveydevey/kvm-mcp) reference implementation
 - **Jared Lowin** for [FastMCP](https://github.com/jlowin/fastmcp) — the proxy and composition engine powering the OpenWebUI bridge
 - The **OpenWebUI** team for [mcpo](https://github.com/open-webui/mcpo) — MCP-to-OpenAPI translation
+- **m0x4m4** for [HexStrike AI](https://github.com/0x4m4/hexstrike-ai) — an incredible AI-powered offensive security automation platform
+- **ProjectDiscovery** for nuclei, subfinder, httpx, katana, and the broader open-source security toolkit
 - **MITRE Corporation**, **GTFOBins/WADComs** contributors, **OWASP**, **Carlos Polop** (HackTricks), **swisskyrepo** (PayloadsAllTheThings), and the **HackerOne/Bugcrowd** communities for the cybersecurity knowledge that powers CyberRAG
 - **Anthropic** for Claude and the Model Context Protocol
 - The **OBS Project** for amazing open-source streaming software
