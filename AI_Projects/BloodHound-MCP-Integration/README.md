@@ -9,7 +9,7 @@
 
 ## Introduction
 
-Imagine telling your AI assistant: *"Show me all paths from STUDENTUSER to Domain Admin"* — and watching it instantly query Neo4j, map out the attack chain, and explain the privilege escalation path in plain English. No Cypher queries to memorize, no manual graph navigation. This guide will show you how to connect **BloodHound Community Edition** to **Claude Desktop** using the **Model Context Protocol (MCP)**, giving Claude the ability to analyze Active Directory attack paths through natural conversation.
+Imagine telling your AI assistant: *"Show me all paths from JSMITH to Domain Admin"* — and watching it instantly query Neo4j, map out the attack chain, and explain the privilege escalation path in plain English. No Cypher queries to memorize, no manual graph navigation. This guide will show you how to connect **BloodHound Community Edition** to **Claude Desktop** using the **Model Context Protocol (MCP)**, giving Claude the ability to analyze Active Directory attack paths through natural conversation.
 
 By the end of this guide, you'll have:
 - A persistent BloodHound CE Docker deployment on custom ports (survives reboots)
@@ -378,30 +378,30 @@ Once connected, you have access to a comprehensive toolkit organized into severa
 
 ## Part 5: Example Conversations
 
-Here's what it actually looks like to use BloodHound through Claude. These are based on real analysis sessions:
+Here's what it actually looks like to use BloodHound through Claude. These examples use fictional domain data to illustrate the workflow:
 
 ### Count and List Domain Users
 > **You:** How many domain users do I have in BloodHound?
 >
-> **Claude:** *[Calls query_bloodhound: `MATCH (u:User) RETURN count(u)`]* You have **9 domain users** in your BloodHound database.
+> **Claude:** *[Calls query_bloodhound: `MATCH (u:User) RETURN count(u)`]* You have **11 domain users** in your BloodHound database.
 >
 > **You:** Can you list them for me?
 >
-> **Claude:** *[Calls query_bloodhound]* Here are your 9 domain users in TECH.CORP:
-> TECHADMIN, CAUSER, STUDENTUSER, GUEST, KRBTGT, PURETECH, FINANCE$, TECHSERVICE, IUSR
+> **Claude:** *[Calls query_bloodhound]* Here are your 11 domain users in YOURCOMPANY.LOCAL:
+> DVADMIN, CERTADM, JSMITH, GUEST, KRBTGT, DEMOUSER, BACKUP$, APPSVC, IUSR, HELPDESK, SQLADMIN
 >
-> A few things that stand out — FINANCE$ has the `$` suffix suggesting it might be a machine account miscategorized as a user. TECHADMIN and TECHSERVICE are likely privileged accounts worth investigating.
+> A few things that stand out — BACKUP$ has the `$` suffix suggesting it might be a machine account miscategorized as a user. DVADMIN and APPSVC are likely privileged accounts worth investigating.
 
 ### Discover Attack Paths from a Specific User
-> **You:** What interesting privileges does STUDENTUSER have?
+> **You:** What interesting privileges does JSMITH have?
 >
 > **Claude:** *[Queries for outbound permissions and multi-hop paths]*
 >
-> STUDENTUSER has a path to **GenericWrite** on **MGMTSRV.TECH.CORP** via two routes:
-> 1. STUDENTUSER → MemberOfLocalGroup → LocalToComputer → GenericWrite on MGMTSRV
-> 2. STUDENTUSER → CanRDP → GenericWrite on MGMTSRV
+> JSMITH has a path to **GenericWrite** on **WEBSRV01.YOURCOMPANY.LOCAL** via two routes:
+> 1. JSMITH → MemberOfLocalGroup → LocalToComputer → GenericWrite on WEBSRV01
+> 2. JSMITH → CanRDP → GenericWrite on WEBSRV01
 >
-> GenericWrite on a computer object allows you to write to the `msDS-AllowedToActOnBehalfOfOtherIdentity` attribute — that's Resource-Based Constrained Delegation abuse, potentially giving you code execution on the management server.
+> GenericWrite on a computer object allows you to write to the `msDS-AllowedToActOnBehalfOfOtherIdentity` attribute — that's Resource-Based Constrained Delegation abuse, potentially giving you code execution on the web server.
 
 ### Find the Path to Domain Admin
 > **You:** See if there's another approach.
@@ -410,9 +410,9 @@ Here's what it actually looks like to use BloodHound through Claude. These are b
 >
 > Found a **6-hop path to Domain Admins:**
 > ```
-> STUDENTUSER → MemberOf → DOMAIN USERS → MemberOf → USERS
->     → LocalToComputer → TECH-DC.TECH.CORP (Domain Controller!)
->     → DCFor → TECH.CORP → Contains → ADMINISTRATORS
+> JSMITH → MemberOf → DOMAIN USERS → MemberOf → USERS
+>     → LocalToComputer → DC01.YOURCOMPANY.LOCAL (Domain Controller!)
+>     → DCFor → YOURCOMPANY.LOCAL → Contains → ADMINISTRATORS
 >     → WriteDacl → DOMAIN ADMINS
 > ```
 > The USERS group has LocalToComputer rights on the Domain Controller — that's a serious misconfiguration. From the DC context, you can abuse WriteDacl to grant yourself Domain Admin membership.
@@ -424,12 +424,12 @@ Here's what it actually looks like to use BloodHound through Claude. These are b
 >
 > 🔥 Found an **ESC1 Vulnerable Certificate Template!**
 >
-> Template: SUBCA@TECH.CORP
+> Template: YOURTEMPLATE@YOURCOMPANY.LOCAL
 > - enrolleesuppliessubject: **TRUE**
 > - authenticationenabled: TRUE
 > - requiresmanagerapproval: FALSE
 >
-> The ENROLLEE_SUPPLIES_SUBJECT flag lets an attacker control the Subject Alternative Name — meaning they can request a certificate as any user, including Domain Admin. Currently only Domain/Enterprise Admins can enroll, but let's check if there's a path for STUDENTUSER to get enrollment rights...
+> The ENROLLEE_SUPPLIES_SUBJECT flag lets an attacker control the Subject Alternative Name — meaning they can request a certificate as any user, including Domain Admin. Currently only Domain/Enterprise Admins can enroll, but let's check if there's a path for JSMITH to get enrollment rights...
 
 ### Custom Cypher Queries
 > **You:** Run a custom query to find all users who haven't changed their password in over a year.
@@ -449,7 +449,7 @@ You: Show me all Kerberoastable users from BloodHound, then create
      findings for each one in SysReptor.
 Claude: [Queries BloodHound for Kerberoastable users]
         [Creates findings in SysReptor from template for each user]
-        Found 5 Kerberoastable accounts. Created findings for each with
+        Found 3 Kerberoastable accounts. Created findings for each with
         the SPN details and risk assessment.
 ```
 
@@ -459,18 +459,18 @@ You: Cross-reference the Domain Admin accounts from BloodHound with
      any failed logon alerts in Wazuh from the last 24 hours.
 Claude: [Queries BloodHound for DA members]
         [Searches Wazuh for failed logon events matching those accounts]
-        TECHADMIN@TECH.CORP had 47 failed logon attempts from
-        192.168.1.50 — possible brute force targeting a privileged account.
+        DVADMIN@YOURCOMPANY.LOCAL had 34 failed logon attempts from
+        10.10.14.22 — possible brute force targeting a privileged account.
 ```
 
 ### BloodHound → Burp Suite Context
 ```
-You: I found a web application running on MGMTSRV. What attack paths
+You: I found a web application running on WEBSRV01. What attack paths
      lead to that computer in BloodHound?
-Claude: [Queries BloodHound for all paths to MGMTSRV.TECH.CORP]
-        3 users can reach MGMTSRV via different paths. STUDENTUSER
+Claude: [Queries BloodHound for all paths to WEBSRV01.YOURCOMPANY.LOCAL]
+        3 users can reach WEBSRV01 via different paths. JSMITH
         has GenericWrite via LocalToComputer. Compromising the web app
-        on MGMTSRV could provide a foothold for lateral movement.
+        on WEBSRV01 could provide a foothold for lateral movement.
 ```
 
 This is the vision — **AI as the connective tissue between your security tools**, correlating data across platforms that would take hours to cross-reference manually.
