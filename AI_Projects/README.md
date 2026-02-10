@@ -35,6 +35,7 @@ Each project in this folder represents hours of experimentation, debugging, and 
 | [LinkedIn-MCP-Integration](./LinkedIn-MCP-Integration/) | Manage your LinkedIn presence through conversation — profile access and post creation with OpenID Connect auth | ✅ Complete |
 | [Splunk-Docker-HomeLab](./Splunk-Docker-HomeLab/) | Deploy Splunk Enterprise in Docker with full network isolation, persistent storage, and zero conflicts with existing containers | ✅ Complete |
 | [KVM-MCP-Integration](./KVM-MCP-Integration/) | AI-powered virtual machine management — create, clone, snapshot, and orchestrate entire pentest lab environments through conversation with 21 tools | ✅ Complete |
+| [OpenWebUI-MCP-Bridge](./OpenWebUI-MCP-Bridge/) | Unified MCP-to-OpenAPI bridge — expose all your MCP tool servers to OpenWebUI through a single endpoint using FastMCP proxy and mcpo | ✅ Complete |
 
 ### Coming Soon
 
@@ -55,7 +56,7 @@ Each project in this folder represents hours of experimentation, debugging, and 
 
 ## A Note on AI in Security
 
-AI tools like Claude aren't replacing security professionals — they're amplifying us. The ability to query your SIEM using natural language, control penetration testing workflows conversationally, manage your streaming setup, build Discord communities, manage your YouTube channel, run private malware analysis with AI-powered OPSEC recommendations, automate your entire pentest reporting pipeline, build a personal cybersecurity knowledge engine with 3,000+ searchable items and study tracking, manage your professional LinkedIn presence through conversation, deploy and manage Splunk Enterprise for centralized log analysis, and now orchestrate entire virtual machine lab environments with 21 AI-powered tools is a game-changer. But it's still **you** making the decisions, **you** understanding the context, and **you** protecting your organization.
+AI tools like Claude aren't replacing security professionals — they're amplifying us. The ability to query your SIEM using natural language, control penetration testing workflows conversationally, manage your streaming setup, build Discord communities, manage your YouTube channel, run private malware analysis with AI-powered OPSEC recommendations, automate your entire pentest reporting pipeline, build a personal cybersecurity knowledge engine with 3,000+ searchable items and study tracking, manage your professional LinkedIn presence through conversation, deploy and manage Splunk Enterprise for centralized log analysis, orchestrate entire virtual machine lab environments with 21 AI-powered tools, and now bridge all your MCP tools into OpenWebUI through a single unified endpoint is a game-changer. But it's still **you** making the decisions, **you** understanding the context, and **you** protecting your organization.
 
 These tools are force multipliers. Use them wisely.
 
@@ -87,6 +88,8 @@ Special thanks to:
 - The **libvirt** team for the industry-standard virtualization API
 - The **QEMU** project for incredible open-source hardware emulation
 - **steveydevey** for the [kvm-mcp](https://github.com/steveydevey/kvm-mcp) reference implementation
+- **Jared Lowin** for [FastMCP](https://github.com/jlowin/fastmcp) — the proxy and composition engine powering the OpenWebUI bridge
+- The **OpenWebUI** team for [mcpo](https://github.com/open-webui/mcpo) — MCP-to-OpenAPI translation
 - **MITRE Corporation**, **GTFOBins/WADComs** contributors, **OWASP**, **Carlos Polop** (HackTricks), **swisskyrepo** (PayloadsAllTheThings), and the **HackerOne/Bugcrowd** communities for the cybersecurity knowledge that powers CyberRAG
 - **Anthropic** for Claude and the Model Context Protocol
 - The **OBS Project** for amazing open-source streaming software
