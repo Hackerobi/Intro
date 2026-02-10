@@ -25,6 +25,7 @@ Each project in this folder represents hours of experimentation, debugging, and 
 | Project | Description | Status |
 |---------|-------------|--------|
 | [Wazuh-MCP-Integration](./Wazuh-MCP-Integration/) | Connect your Wazuh SIEM to Claude AI using the Model Context Protocol | ✅ Complete |
+| [BloodHound-MCP-Integration](./BloodHound-MCP-Integration/) | AI-powered Active Directory attack path analysis — query BloodHound's 75+ tools through natural conversation with persistent Docker deployment | ✅ Complete |
 | [Burp-Suite-MCP-Integration](./Burp-Suite-MCP-Integration/) | AI-powered penetration testing with Burp Suite Community Edition | ✅ Complete |
 | [OBS-MCP-Integration](./OBS-MCP-Integration/) | Control OBS Studio with Claude AI for streaming, recording, and content creation | ✅ Complete |
 | [Discord-MCP-Integration](./Discord-MCP-Integration/) | AI-powered Discord server management — build and maintain communities through conversation | ✅ Complete |
@@ -57,7 +58,7 @@ Each project in this folder represents hours of experimentation, debugging, and 
 
 ## A Note on AI in Security
 
-AI tools like Claude aren't replacing security professionals — they're amplifying us. The ability to query your SIEM using natural language, control penetration testing workflows conversationally, manage your streaming setup, build Discord communities, manage your YouTube channel, run private malware analysis with AI-powered OPSEC recommendations, automate your entire pentest reporting pipeline, build a personal cybersecurity knowledge engine with 3,000+ searchable items and study tracking, manage your professional LinkedIn presence through conversation, deploy and manage Splunk Enterprise for centralized log analysis, search and query your Splunk SIEM directly through Claude, orchestrate entire virtual machine lab environments with 21 AI-powered tools, and bridge all your MCP tools into OpenWebUI through a single unified endpoint is a game-changer. But it's still **you** making the decisions, **you** understanding the context, and **you** protecting your organization.
+AI tools like Claude aren't replacing security professionals — they're amplifying us. The ability to query your SIEM using natural language, analyze Active Directory attack paths conversationally through BloodHound, control penetration testing workflows conversationally, manage your streaming setup, build Discord communities, manage your YouTube channel, run private malware analysis with AI-powered OPSEC recommendations, automate your entire pentest reporting pipeline, build a personal cybersecurity knowledge engine with 3,000+ searchable items and study tracking, manage your professional LinkedIn presence through conversation, deploy and manage Splunk Enterprise for centralized log analysis, search and query your Splunk SIEM directly through Claude, orchestrate entire virtual machine lab environments with 21 AI-powered tools, and bridge all your MCP tools into OpenWebUI through a single unified endpoint is a game-changer. But it's still **you** making the decisions, **you** understanding the context, and **you** protecting your organization.
 
 These tools are force multipliers. Use them wisely.
 
@@ -77,6 +78,8 @@ Have questions? Found a bug? Want to share your own projects? **Open an issue or
 
 Special thanks to:
 - The **Wazuh** team for building an incredible open-source SIEM
+- **SpecterOps** for building BloodHound — the tool that changed Active Directory security forever
+- **MorDavid** for [BloodHound-MCP-AI](https://github.com/MorDavid/BloodHound-MCP-AI) — the first-ever BloodHound AI integration
 - **PortSwigger** for Burp Suite and their commitment to web security education
 - **Roy Shilkrot** for the [obs-mcp](https://github.com/royshil/obs-mcp) server
 - **SaseQ** for the [discord-mcp](https://github.com/SaseQ/discord-mcp) server
